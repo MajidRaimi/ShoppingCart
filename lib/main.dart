@@ -13,6 +13,10 @@ void main() {
       // The Data Store Class Is "MyStore"
       create: (context) => MyStore() ,
       child: MaterialApp(
+        theme: ThemeData(
+          platform: TargetPlatform.iOS,
+        ),
+        debugShowCheckedModeBanner: false,
         home: ProductsPage(),
       ),
     ),

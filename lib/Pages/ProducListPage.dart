@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:lab7/Pages/BasketPage.dart';
 import 'package:lab7/Pages/PrdoucDetailsPage.dart';
 import 'package:lab7/Store/MyStoreClass.dart';
 import 'package:provider/provider.dart';
+
+import '../const.dart';
 
 class ProductsPage extends StatelessWidget {
   const ProductsPage({Key? key}) : super(key: key);
@@ -16,8 +19,21 @@ class ProductsPage extends StatelessWidget {
 
     return Scaffold(
       appBar: AppBar(
+        leading: IconButton(
+          icon: Icon(Icons.repeat , color: kMainColor,),
+          onPressed: (){
+            store.emptyTheBasket() ;
+          },
+        ),
         centerTitle: true,
-        title: Text("Products"),
+        elevation: 0,
+        backgroundColor: kBackgroundColor,
+        title: Text("Products" , style: TextStyle(color: kMainColor),),
+        actions: [
+          IconButton(onPressed: (){
+            Navigator.push(context, MaterialPageRoute(builder: (context) => BasketPage())) ;
+          }, icon: Icon(Icons.shopping_cart_rounded , color: kMainColor,))
+        ],
       ),
       body: GridView.builder(
           itemCount: store.products.length,
@@ -44,8 +60,11 @@ class ProductsPage extends StatelessWidget {
                         child: Container(
                           child: ClipRRect(
                             borderRadius: BorderRadius.circular(40),
-                            child: Image(
-                              image: NetworkImage(store.products[i].photo),
+                            child: Hero(
+                              tag: store.products[i].id,
+                              child: Image(
+                                image: NetworkImage(store.products[i].photo),
+                              ),
                             ),
                           ),
                         ),

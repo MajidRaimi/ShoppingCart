@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:lab7/Store/MyStoreClass.dart';
+import 'package:lab7/const.dart';
 import 'package:provider/provider.dart';
 
 class ProductDetailsPage extends StatefulWidget {
@@ -18,12 +19,13 @@ class _ProductDetailsPageState extends State<ProductDetailsPage> {
       appBar: AppBar(
         centerTitle: true,
         elevation: 0,
-        title: Text("Details"),
+        backgroundColor: kBackgroundColor,
+        title: Text("Details" , style: TextStyle(color: kMainColor),),
         leading: IconButton(
           onPressed: () {
             Navigator.pop(context);
           },
-          icon: Icon(Icons.close),
+          icon: Icon(Icons.close , color: kMainColor,),
         ),
       ),
       body: Column(
@@ -40,9 +42,11 @@ class _ProductDetailsPageState extends State<ProductDetailsPage> {
               padding: const EdgeInsets.all(50.0),
               child: ClipRRect(
                   borderRadius: BorderRadius.circular(40),
-                  child: Image.network(
-                    store.activeProduct.photo,
-                  )),
+                  child: Hero(
+                      tag: store.activeProduct.id,
+                      child: Image(
+                        image: NetworkImage(store.activeProduct.photo),
+                      ))),
             ),
           ),
           Expanded(
@@ -58,12 +62,14 @@ class _ProductDetailsPageState extends State<ProductDetailsPage> {
                 Transform.scale(
                     scale: 0.8,
                     child: FloatingActionButton(
+                      backgroundColor: kMainColor,
                       onPressed: () {
                         setState(() {
-                          if(store.activeProduct.qty > 0){
-                            store.activeProduct.qty -= 1 ;
+                          if (store.activeProduct.qty > 0) {
+                            store.activeProduct.qty -= 1;
                           }
                         });
+                        store.removeItemFromBasket(store.activeProduct);
                       },
                       child: Icon(Icons.remove),
                     )),
@@ -79,9 +85,10 @@ class _ProductDetailsPageState extends State<ProductDetailsPage> {
                 Transform.scale(
                   scale: 0.8,
                   child: FloatingActionButton(
+                    backgroundColor: kMainColor,
                     onPressed: () {
                       setState(() {
-                        store.activeProduct.qty += 1 ;
+                        store.activeProduct.qty += 1;
                       });
                     },
                     child: Icon(Icons.add),
@@ -90,7 +97,33 @@ class _ProductDetailsPageState extends State<ProductDetailsPage> {
               ],
             ),
             flex: 2,
-          )
+          ),
+          Expanded(
+            flex: 2,
+            child: Padding(
+              padding: const EdgeInsets.all(20),
+              child: GestureDetector(
+                onTap: () {
+                  setState(() {
+                    store.addElementToBasket(store.activeProduct);
+                  });
+                  Navigator.pop(context);
+                },
+                child: Container(
+                  child: Center(
+                    child: Text(
+                      "Add To Cart",
+                      style: TextStyle(color: Colors.white),
+                    ),
+                  ),
+                  decoration: BoxDecoration(
+                    color: Colors.indigoAccent,
+                    borderRadius: BorderRadius.circular(30),
+                  ),
+                ),
+              ),
+            ),
+          ),
         ],
       ),
     );
