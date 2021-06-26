@@ -61,8 +61,11 @@ class ProductsPage extends StatelessWidget {
                           child: ClipRRect(
                             borderRadius: BorderRadius.circular(40),
                             child: Hero(
-                              tag: store.products[i].id,
+                              tag: "tagImage${store.products[i].id}",
                               child: Image(
+                                width: double.infinity,
+                                height: double.infinity,
+                                fit: BoxFit.fill,
                                 image: NetworkImage(store.products[i].photo),
                               ),
                             ),

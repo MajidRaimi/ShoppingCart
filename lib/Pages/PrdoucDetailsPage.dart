@@ -43,7 +43,8 @@ class _ProductDetailsPageState extends State<ProductDetailsPage> {
               child: ClipRRect(
                   borderRadius: BorderRadius.circular(40),
                   child: Hero(
-                      tag: store.activeProduct.id,
+                      tag: "tagImage${store.activeProduct.id}",
+
                       child: Image(
                         image: NetworkImage(store.activeProduct.photo),
                       ))),
