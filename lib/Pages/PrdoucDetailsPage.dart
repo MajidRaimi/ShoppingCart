@@ -117,7 +117,7 @@ class _ProductDetailsPageState extends State<ProductDetailsPage> {
                     ),
                   ),
                   decoration: BoxDecoration(
-                    color: Colors.indigoAccent,
+                    color: kMainColor,
                     borderRadius: BorderRadius.circular(30),
                   ),
                 ),

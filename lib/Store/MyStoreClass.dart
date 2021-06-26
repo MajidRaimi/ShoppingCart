@@ -45,7 +45,8 @@ class MyStore extends ChangeNotifier {
           photo:
               "https://www.thespruceeats.com/thmb/hl4lkmdLO7tj1eDCsGbakfk97Co=/3088x2055/filters:fill(auto,1)/marinated-top-round-steak-3060302-hero-02-ed071d5d7e584bea82857112aa734a94.jpg",
           qty: 0,
-          price: 99.9)
+          price: 99.9) ,
+      Product(name: "Wings", id: 5, pId: 5, photo: "https://hips.hearstapps.com/hmg-prod/images/classic-buffalo-wings-horizontal-279-1547506077.jpg", qty: 0, price: 16.99)
     ];
 
     notifyListeners();
