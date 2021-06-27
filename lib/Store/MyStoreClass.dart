@@ -5,7 +5,7 @@ class MyStore extends ChangeNotifier {
   // The Public Class
 
   List<Product> _products = [];
-  List<Product> _drinks = [] ;
+  List<Product> _drinks = [];
   List<Product> _basket = [];
 
   late Product _activeProduct;
@@ -45,18 +45,29 @@ class MyStore extends ChangeNotifier {
           photo:
               "https://www.thespruceeats.com/thmb/hl4lkmdLO7tj1eDCsGbakfk97Co=/3088x2055/filters:fill(auto,1)/marinated-top-round-steak-3060302-hero-02-ed071d5d7e584bea82857112aa734a94.jpg",
           qty: 0,
-          price: 99.9) ,
-      Product(name: "Wings", id: 5, pId: 5, photo: "https://hips.hearstapps.com/hmg-prod/images/classic-buffalo-wings-horizontal-279-1547506077.jpg", qty: 0, price: 16.99)
-
-
-
+          price: 99.9),
+      Product(
+        name: "Wings",
+        id: 5,
+        pId: 5,
+        photo:
+            "https://hips.hearstapps.com/hmg-prod/images/classic-buffalo-wings-horizontal-279-1547506077.jpg",
+        qty: 0,
+        price: 16.99,
+      )
     ];
 
-
     _drinks = [
-      Product(name: "Drink", id: 1, pId: 1, photo: "https://www.acouplecooks.com/wp-content/uploads/2021/02/Painkiller-Cocktail-008.jpg", qty: 0, price: 9.99)
-    ] ;
-
+      Product(
+        name: "Drink",
+        id: 1,
+        pId: 1,
+        photo:
+            "https://www.acouplecooks.com/wp-content/uploads/2021/02/Painkiller-Cocktail-008.jpg",
+        qty: 0,
+        price: 9.99,
+      )
+    ];
 
     notifyListeners();
   }
@@ -68,9 +79,8 @@ class MyStore extends ChangeNotifier {
   }
 
   List<Product> get drinks {
-    return _drinks ;
+    return _drinks;
   }
-
 
   List<Product> get basket {
     return _basket;
@@ -120,27 +130,21 @@ class MyStore extends ChangeNotifier {
     return total;
   }
 
-  getTotalPrice(){
-    double total = 0 ;
-    for(int i  = 0 ; i < basket.length ; i++){
-      total+= basket[i].price * basket[i].qty ;
+  getTotalPrice() {
+    double total = 0;
+    for (int i = 0; i < basket.length; i++) {
+      total += basket[i].price * basket[i].qty;
     }
 
-    String sTotal = total.toStringAsFixed(2) ;
+    String sTotal = total.toStringAsFixed(2);
 
-
-
-    return sTotal ;
+    return sTotal;
   }
 
-
-  emptyTheBasket(){
-    _basket = [] ;
-    for(int i = 0 ; i < _products.length ; i++){
-      products[i].qty = 0 ;
+  emptyTheBasket() {
+    _basket = [];
+    for (int i = 0; i < _products.length; i++) {
+      products[i].qty = 0;
     }
   }
-
-
-
 }

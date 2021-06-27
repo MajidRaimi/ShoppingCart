@@ -7,22 +7,17 @@ import 'package:provider/provider.dart';
 
 import '../const.dart';
 
-
-
 class FoodScreen extends StatelessWidget {
   const FoodScreen({Key? key}) : super(key: key);
 
   @override
-
-
   Widget build(BuildContext context) {
-
     var store = Provider.of<MyStore>(context);
 
     return GridView.builder(
         itemCount: store.products.length,
         gridDelegate:
-        SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 2),
+            SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 2),
         itemBuilder: (context, i) {
           return Expanded(
             child: Padding(
@@ -59,7 +54,7 @@ class FoodScreen extends StatelessWidget {
                     Align(
                       child: Container(
                         decoration: BoxDecoration(
-                          color: Color(0x80000000),
+                          color: Color(0xACFFFFFF),
                           borderRadius: BorderRadius.only(
                             bottomLeft: Radius.circular(45),
                             bottomRight: Radius.circular(45),
@@ -69,7 +64,10 @@ class FoodScreen extends StatelessWidget {
                           padding: const EdgeInsets.all(8.0),
                           child: Text(
                             "${store.products[i].name}",
-                            style: TextStyle(color: Colors.white),
+                            style: TextStyle(
+                              color: kMainColor,
+                              fontSize: 18,
+                            ),
                             textAlign: TextAlign.center,
                           ),
                         ),

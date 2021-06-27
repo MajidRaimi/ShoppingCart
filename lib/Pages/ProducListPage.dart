@@ -6,7 +6,6 @@ import 'package:provider/provider.dart';
 import 'package:lab7/Screens/FoodScreen.dart';
 import 'package:lab7/Screens/DrinksScreen.dart';
 
-
 import '../const.dart';
 
 class ProductsPage extends StatelessWidget {
@@ -22,41 +21,64 @@ class ProductsPage extends StatelessWidget {
       child: Scaffold(
         appBar: AppBar(
           leading: IconButton(
-            icon: Icon(Icons.repeat , color: kMainColor,),
-            onPressed: (){
-              store.emptyTheBasket() ;
+            icon: Icon(
+              Icons.repeat,
+              color: kMainColor,
+            ),
+            onPressed: () {
+              store.emptyTheBasket();
             },
           ),
           centerTitle: true,
           elevation: 0,
           backgroundColor: kBackgroundColor,
-          title: Text("Products" , style: TextStyle(color: kMainColor),),
+          title: Text(
+            "The X Restaurant ",
+            style: TextStyle(
+                color: kMainColor, fontFamily: "Pacifico", fontSize: 25),
+          ),
           actions: [
-            IconButton(onPressed: (){
-              Navigator.push(context, MaterialPageRoute(builder: (context) => BasketPage())) ;
-            }, icon: Icon(Icons.shopping_cart_rounded , color: kMainColor,))
+            IconButton(
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => BasketPage(),
+                    ),
+                  );
+                },
+                icon: Icon(
+                  Icons.shopping_cart_rounded,
+                  color: kMainColor,
+                ))
           ],
           bottom: TabBar(
             tabs: [
-              Tab(icon: Icon(Icons.fastfood , color: kMainColor,),) ,
-              Tab(icon: Icon(Icons.local_drink_sharp , color: kMainColor,),)
+              Tab(
+                icon: Icon(
+                  Icons.fastfood,
+                  color: kMainColor,
+                ),
+              ),
+              Tab(
+                icon: Icon(
+                  Icons.local_drink_sharp,
+                  color: kMainColor,
+                ),
+              )
             ],
             indicatorColor: kMainColor,
           ),
-
         ),
-
-
-
         body: TabBarView(
           children: [
-            FoodScreen() ,
-            DrinksScreen() ,
+            FoodScreen(),
+            DrinksScreen(),
           ],
-        ) ,
+        ),
       ),
       length: 2,
       initialIndex: 0,
-    ) ;
+    );
   }
 }

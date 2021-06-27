@@ -39,8 +39,8 @@ class _ProductDetailsPageState extends State<ProductDetailsPage> {
                 ) ,
                 Padding(
                   padding: const EdgeInsets.only(
-                    left: 15 ,
-                    top: 20
+                    left: 20 ,
+                    top: 35
                   ),
                   child: GestureDetector(
                     onTap: (){

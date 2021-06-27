@@ -1,14 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:lab7/Model/Products.dart';
 
-
 class ShowInCart extends StatelessWidget {
+  final Product product;
 
-  final Product product ;
-
-  ShowInCart({required this.product}) ;
-
-
+  ShowInCart({required this.product});
 
   @override
   Widget build(BuildContext context) {
@@ -17,7 +13,7 @@ class ShowInCart extends StatelessWidget {
       child: Container(
         decoration: BoxDecoration(
           color: Colors.white,
-          borderRadius: BorderRadius.circular(25)
+          borderRadius: BorderRadius.circular(25),
         ),
         width: double.infinity,
         height: 70,
@@ -25,14 +21,27 @@ class ShowInCart extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
-            Expanded(child: Center(
-              child: ClipRRect(
-                borderRadius: BorderRadius.circular(40),
-                child: Image.network(product.photo),
+            Expanded(
+              child: Center(
+                child: ClipRRect(
+                  borderRadius: BorderRadius.circular(40),
+                  child: Image.network(product.photo),
+                ),
               ),
-            ) , flex: 3,) ,
-            Expanded(child: Center(child: Text(product.name)) , flex: 7,),
-            Expanded(child: Center(child: Text(product.qty.toString())) , flex: 3,)
+              flex: 3,
+            ),
+            Expanded(
+              child: Center(child: Text(product.name)),
+              flex: 7,
+            ),
+            Expanded(
+              child: Center(
+                child: Text(
+                  product.qty.toString(),
+                ),
+              ),
+              flex: 3,
+            ),
           ],
         ),
       ),
