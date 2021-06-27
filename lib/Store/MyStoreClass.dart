@@ -5,7 +5,7 @@ class MyStore extends ChangeNotifier {
   // The Public Class
 
   List<Product> _products = [];
-
+  List<Product> _drinks = [] ;
   List<Product> _basket = [];
 
   late Product _activeProduct;
@@ -47,7 +47,16 @@ class MyStore extends ChangeNotifier {
           qty: 0,
           price: 99.9) ,
       Product(name: "Wings", id: 5, pId: 5, photo: "https://hips.hearstapps.com/hmg-prod/images/classic-buffalo-wings-horizontal-279-1547506077.jpg", qty: 0, price: 16.99)
+
+
+
     ];
+
+
+    _drinks = [
+      Product(name: "Drink", id: 1, pId: 1, photo: "https://www.acouplecooks.com/wp-content/uploads/2021/02/Painkiller-Cocktail-008.jpg", qty: 0, price: 9.99)
+    ] ;
+
 
     notifyListeners();
   }
@@ -57,6 +66,11 @@ class MyStore extends ChangeNotifier {
   List<Product> get products {
     return _products;
   }
+
+  List<Product> get drinks {
+    return _drinks ;
+  }
+
 
   List<Product> get basket {
     return _basket;

@@ -16,38 +16,48 @@ class _ProductDetailsPageState extends State<ProductDetailsPage> {
     var store = Provider.of<MyStore>(context);
 
     return Scaffold(
-      appBar: AppBar(
-        centerTitle: true,
-        elevation: 0,
-        backgroundColor: kBackgroundColor,
-        title: Text("Details" , style: TextStyle(color: kMainColor),),
-        leading: IconButton(
-          onPressed: () {
-            Navigator.pop(context);
-          },
-          icon: Icon(Icons.close , color: kMainColor,),
-        ),
-      ),
+
       body: Column(
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
-          Expanded(
-            flex: 1,
-            child: Center(child: Text(store.activeProduct.name)),
-          ),
+
           Expanded(
             flex: 5,
-            child: Padding(
-              padding: const EdgeInsets.all(50.0),
-              child: ClipRRect(
-                  borderRadius: BorderRadius.circular(40),
-                  child: Hero(
-                      tag: "tagImage${store.activeProduct.id}",
-
-                      child: Image(
-                        image: NetworkImage(store.activeProduct.photo),
-                      ))),
+            child: Stack(
+              children: [
+                ClipRRect(
+                  borderRadius: BorderRadius.only(
+                      bottomLeft: Radius.circular(30) ,
+                      bottomRight: Radius.circular(30)
+                  ),
+                  child: Image(
+                    width: double.infinity,
+                    image: NetworkImage(store.activeProduct.photo),
+                    fit: BoxFit.fill,
+                  ),
+                ) ,
+                Padding(
+                  padding: const EdgeInsets.only(
+                    left: 15 ,
+                    top: 20
+                  ),
+                  child: GestureDetector(
+                    onTap: (){
+                      Navigator.pop(context) ;
+                    },
+                    child: Container(
+                      child: Icon(Icons.close , color: Colors.white, size: 20,),
+                      width: 35,
+                      height: 35,
+                      decoration: BoxDecoration(
+                        color: kMainColor,
+                        borderRadius: BorderRadius.circular(10)
+                      ),
+                    ),
+                  ),
+                )
+              ],
             ),
           ),
           Expanded(
