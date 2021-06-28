@@ -11,6 +11,8 @@ class MyStore extends ChangeNotifier {
   late Product _activeProduct;
 
   MyStore() {
+
+
     _products = [
       Product(
         name: "Burger",
@@ -54,7 +56,14 @@ class MyStore extends ChangeNotifier {
             "https://hips.hearstapps.com/hmg-prod/images/classic-buffalo-wings-horizontal-279-1547506077.jpg",
         qty: 0,
         price: 16.99,
-      )
+      ),
+      Product(
+          name: "Arekah",
+          id: 6,
+          pId: 6,
+          photo: "https://kitchen.sayidaty.net/uploads/node/4_(10).jpg",
+          qty: 0,
+          price: 9.99),
     ];
 
     _drinks = [
@@ -66,7 +75,16 @@ class MyStore extends ChangeNotifier {
             "https://www.acouplecooks.com/wp-content/uploads/2021/02/Painkiller-Cocktail-008.jpg",
         qty: 0,
         price: 9.99,
-      )
+      ),
+      Product(
+        name: "Citrus",
+        id: 2,
+        pId: 2,
+        photo:
+            "https://www.alnokhbahmarkets.com/wp-content/uploads/2020/05/8910115.png",
+        qty: 0,
+        price: 2.5,
+      ),
     ];
 
     notifyListeners();

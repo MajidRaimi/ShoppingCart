@@ -56,18 +56,15 @@ class FoodScreen extends StatelessWidget {
                         decoration: BoxDecoration(
                           color: Color(0xACFFFFFF),
                           borderRadius: BorderRadius.only(
-                            bottomLeft: Radius.circular(45),
-                            bottomRight: Radius.circular(45),
+                            bottomLeft: Radius.circular(30),
+                            bottomRight: Radius.circular(30),
                           ),
                         ),
                         child: Padding(
                           padding: const EdgeInsets.all(8.0),
                           child: Text(
                             "${store.products[i].name}",
-                            style: TextStyle(
-                              color: kMainColor,
-                              fontSize: 18,
-                            ),
+                            style: TextStyle(color: kMainColor , fontSize: 18 , fontFamily: kMainFont),
                             textAlign: TextAlign.center,
                           ),
                         ),

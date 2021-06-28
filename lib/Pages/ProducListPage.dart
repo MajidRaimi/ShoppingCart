@@ -17,6 +17,8 @@ class ProductsPage extends StatelessWidget {
 
     var store = Provider.of<MyStore>(context);
 
+
+
     return DefaultTabController(
       child: Scaffold(
         appBar: AppBar(
@@ -39,18 +41,19 @@ class ProductsPage extends StatelessWidget {
           ),
           actions: [
             IconButton(
-                onPressed: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (context) => BasketPage(),
-                    ),
-                  );
-                },
-                icon: Icon(
-                  Icons.shopping_cart_rounded,
-                  color: kMainColor,
-                ))
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => BasketPage(),
+                  ),
+                );
+              },
+              icon: Icon(
+                Icons.shopping_cart_rounded,
+                color: kMainColor,
+              ),
+            ),
           ],
           bottom: TabBar(
             tabs: [

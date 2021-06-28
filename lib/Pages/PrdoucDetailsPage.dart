@@ -16,44 +16,41 @@ class _ProductDetailsPageState extends State<ProductDetailsPage> {
     var store = Provider.of<MyStore>(context);
 
     return Scaffold(
-
       body: Column(
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
-
           Expanded(
             flex: 5,
             child: Stack(
               children: [
                 ClipRRect(
                   borderRadius: BorderRadius.only(
-                      bottomLeft: Radius.circular(30) ,
-                      bottomRight: Radius.circular(30)
-                  ),
+                      bottomLeft: Radius.circular(30),
+                      bottomRight: Radius.circular(30)),
                   child: Image(
                     width: double.infinity,
                     image: NetworkImage(store.activeProduct.photo),
                     fit: BoxFit.fill,
                   ),
-                ) ,
+                ),
                 Padding(
-                  padding: const EdgeInsets.only(
-                    left: 20 ,
-                    top: 35
-                  ),
+                  padding: const EdgeInsets.only(left: 20, top: 35),
                   child: GestureDetector(
-                    onTap: (){
-                      Navigator.pop(context) ;
+                    onTap: () {
+                      Navigator.pop(context);
                     },
                     child: Container(
-                      child: Icon(Icons.close , color: Colors.white, size: 20,),
+                      child: Icon(
+                        Icons.close,
+                        color: Colors.white,
+                        size: 20,
+                      ),
                       width: 35,
                       height: 35,
                       decoration: BoxDecoration(
-                        color: kMainColor,
-                        borderRadius: BorderRadius.circular(10)
-                      ),
+                          color: kMainColor,
+                          borderRadius: BorderRadius.circular(10)),
                     ),
                   ),
                 )
@@ -61,9 +58,122 @@ class _ProductDetailsPageState extends State<ProductDetailsPage> {
             ),
           ),
           Expanded(
-            flex: 1,
-            child: Text(
-              store.activeProduct.price.toString(),
+            flex: 3,
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              crossAxisAlignment: CrossAxisAlignment.stretch,
+              children: [
+                Expanded(
+                  flex: 4,
+                  child: Row(
+                    children: [
+                      Expanded(
+                        child: Column(
+                          children: [
+                            Row(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: [
+                                Text(
+                                  "Details ",
+                                  style: TextStyle(
+                                    color: kMainColor,
+                                    fontFamily: kMainFont,
+                                    fontSize: 25,
+                                  ),
+                                ),
+                                Icon(
+                                  Icons.info,
+                                  color: kMainColor,
+                                  size: 30,
+                                ),
+                                Text(
+                                  " : ",
+                                  style: TextStyle(
+                                    color: kMainColor,
+                                    fontFamily: kMainFont,
+                                    fontSize: 25,
+                                  ),
+                                ),
+                              ],
+                            ),
+                            Align(
+                              alignment: Alignment.center,
+                              child: Column(
+                                children: [
+                                  Text(
+                                    "* A",
+                                    style: TextStyle(
+                                      color: kMainColor,
+                                      fontFamily: kMainFont,
+                                    ),
+                                  ),
+                                  Text(
+                                    "* A",
+                                    style: TextStyle(
+                                      color: kMainColor,
+                                      fontFamily: kMainFont,
+                                    ),
+                                  ),
+                                  Text(
+                                    "* A",
+                                    style: TextStyle(
+                                      color: kMainColor,
+                                      fontFamily: kMainFont,
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            )
+                          ],
+                        ),
+                      ),
+                      Expanded(
+                        child: Column(
+                          children: [
+                            Row(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: [
+                                Text(
+                                  "Calories ",
+                                  style: TextStyle(
+                                    color: kMainColor,
+                                    fontFamily: kMainFont,
+                                    fontSize: 25,
+                                  ),
+                                ),
+                                Icon(
+                                  Icons.local_fire_department,
+                                  color: kMainColor,
+                                  size: 30,
+                                ),
+                                Text(
+                                  " : ",
+                                  style: TextStyle(
+                                    color: kMainColor,
+                                    fontFamily: kMainFont,
+                                    fontSize: 25,
+                                  ),
+                                ),
+                              ],
+                            ),
+                            Text(
+                              "340 cal",
+                              style: TextStyle(
+                                color: kMainColor,
+                                fontFamily: kMainFont,
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+                Expanded(
+                  child: Row(),
+                  flex: 2,
+                ),
+              ],
             ),
           ),
           Expanded(
@@ -71,19 +181,20 @@ class _ProductDetailsPageState extends State<ProductDetailsPage> {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Transform.scale(
-                    scale: 0.8,
-                    child: FloatingActionButton(
-                      backgroundColor: kMainColor,
-                      onPressed: () {
-                        setState(() {
-                          if (store.activeProduct.qty > 0) {
-                            store.activeProduct.qty -= 1;
-                          }
-                        });
-                        store.removeItemFromBasket(store.activeProduct);
-                      },
-                      child: Icon(Icons.remove),
-                    )),
+                  scale: 0.8,
+                  child: FloatingActionButton(
+                    backgroundColor: kMainColor,
+                    onPressed: () {
+                      setState(() {
+                        if (store.activeProduct.qty > 0) {
+                          store.activeProduct.qty -= 1;
+                        }
+                      });
+                      store.removeItemFromBasket(store.activeProduct);
+                    },
+                    child: Icon(Icons.remove),
+                  ),
+                ),
                 Padding(
                   padding: const EdgeInsets.all(18.0),
                   child: Container(
@@ -107,7 +218,7 @@ class _ProductDetailsPageState extends State<ProductDetailsPage> {
                 ),
               ],
             ),
-            flex: 2,
+            flex: 1,
           ),
           Expanded(
             flex: 2,
