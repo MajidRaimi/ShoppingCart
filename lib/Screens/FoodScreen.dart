@@ -45,7 +45,7 @@ class FoodScreen extends StatelessWidget {
                               width: double.infinity,
                               height: double.infinity,
                               fit: BoxFit.fill,
-                              image: NetworkImage(store.products[i].photo),
+                              image: AssetImage(store.products[i].photo),
                             ),
                           ),
                         ),

@@ -53,7 +53,9 @@ class _BasketPageState extends State<BasketPage> {
             ),
             Expanded(
                 child: Text(
-                    "Total Of ${store.getBasketTotalQty()} Orders For ${store.getTotalPrice().toString()} SAR"))
+                    "Total Of ${store.getBasketTotalQty()} Orders For ${store.getTotalPrice().toString()} SAR" , style: TextStyle(
+                  color: kMainColor , fontSize: 15
+                ),))
           ],
         ));
   }

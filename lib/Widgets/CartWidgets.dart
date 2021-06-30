@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:lab7/Model/Products.dart';
+import 'package:lab7/const.dart';
 
 class ShowInCart extends StatelessWidget {
   final Product product;
@@ -23,21 +24,26 @@ class ShowInCart extends StatelessWidget {
           children: [
             Expanded(
               child: Center(
-                child: ClipRRect(
-                  borderRadius: BorderRadius.circular(40),
-                  child: Image.network(product.photo),
-                ),
+                child: Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: CircleAvatar(
+                    backgroundColor: Colors.white,
+                    backgroundImage: AssetImage(product.photo),
+                    radius: double.infinity,
+                  ),
+                )
               ),
               flex: 3,
             ),
             Expanded(
-              child: Center(child: Text(product.name)),
+              child: Center(child: Text(product.name , style : TextStyle(color: kMainColor , fontFamily: kMainFont , fontSize: 20),)),
               flex: 7,
             ),
             Expanded(
               child: Center(
                 child: Text(
                   product.qty.toString(),
+                  style : TextStyle(color: kMainColor , fontFamily: kMainFont , fontSize: 20),
                 ),
               ),
               flex: 3,

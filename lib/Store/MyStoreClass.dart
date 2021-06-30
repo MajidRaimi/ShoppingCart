@@ -18,8 +18,7 @@ class MyStore extends ChangeNotifier {
         name: "Burger",
         id: 1,
         pId: 1,
-        photo:
-            "https://www.tasteofhome.com/wp-content/uploads/2020/03/Smash-Burgers_EXPS_TOHcom20_246232_B10_06_10b.jpg?fit=700,1024",
+        photo: "images/food/burger.jpg",
         qty: 0,
         price: 29.99,
       ),
@@ -28,7 +27,7 @@ class MyStore extends ChangeNotifier {
         id: 2,
         pId: 2,
         photo:
-            "http://simply-delicious-food.com/wp-content/uploads/2020/06/Grilled-Pizza-Margherita-3.jpg",
+            "images/food/pizza.jpg",
         qty: 0,
         price: 39.99,
       ),
@@ -37,7 +36,7 @@ class MyStore extends ChangeNotifier {
           id: 3,
           pId: 3,
           photo:
-              "https://img.taste.com.au/ol2Jq8ZQ/taste/2016/11/rachel-87711-2.jpeg",
+              "images/food/fries.jpeg",
           qty: 0,
           price: 9.99),
       Product(
@@ -45,7 +44,7 @@ class MyStore extends ChangeNotifier {
           id: 4,
           pId: 4,
           photo:
-              "https://www.thespruceeats.com/thmb/hl4lkmdLO7tj1eDCsGbakfk97Co=/3088x2055/filters:fill(auto,1)/marinated-top-round-steak-3060302-hero-02-ed071d5d7e584bea82857112aa734a94.jpg",
+              "images/food/steak.jpg",
           qty: 0,
           price: 99.9),
       Product(
@@ -53,17 +52,11 @@ class MyStore extends ChangeNotifier {
         id: 5,
         pId: 5,
         photo:
-            "https://hips.hearstapps.com/hmg-prod/images/classic-buffalo-wings-horizontal-279-1547506077.jpg",
+            "images/food/wings.jpg",
         qty: 0,
         price: 16.99,
       ),
-      Product(
-          name: "Arekah",
-          id: 6,
-          pId: 6,
-          photo: "https://kitchen.sayidaty.net/uploads/node/4_(10).jpg",
-          qty: 0,
-          price: 9.99),
+
     ];
 
     _drinks = [
@@ -72,18 +65,18 @@ class MyStore extends ChangeNotifier {
         id: 1,
         pId: 1,
         photo:
-            "https://www.acouplecooks.com/wp-content/uploads/2021/02/Painkiller-Cocktail-008.jpg",
+            "images/drinks/drink.webp",
         qty: 0,
         price: 9.99,
       ),
       Product(
-        name: "Citrus",
+        name: "Water",
         id: 2,
         pId: 2,
         photo:
-            "https://www.alnokhbahmarkets.com/wp-content/uploads/2020/05/8910115.png",
+            "images/drinks/water.jpg",
         qty: 0,
-        price: 2.5,
+        price: 1.5,
       ),
     ];
 
@@ -163,6 +156,7 @@ class MyStore extends ChangeNotifier {
     _basket = [];
     for (int i = 0; i < _products.length; i++) {
       products[i].qty = 0;
+      drinks[i].qty = 0 ;
     }
   }
 }

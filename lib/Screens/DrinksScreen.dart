@@ -45,7 +45,7 @@ class DrinksScreen extends StatelessWidget {
                               width: double.infinity,
                               height: double.infinity,
                               fit: BoxFit.fill,
-                              image: NetworkImage(store.drinks[i].photo),
+                              image: AssetImage(store.drinks[i].photo),
                             ),
                           ),
                         ),

@@ -30,7 +30,7 @@ class _ProductDetailsPageState extends State<ProductDetailsPage> {
                       bottomRight: Radius.circular(30)),
                   child: Image(
                     width: double.infinity,
-                    image: NetworkImage(store.activeProduct.photo),
+                    image: AssetImage(store.activeProduct.photo),
                     fit: BoxFit.fill,
                   ),
                 ),
@@ -64,115 +64,162 @@ class _ProductDetailsPageState extends State<ProductDetailsPage> {
               crossAxisAlignment: CrossAxisAlignment.stretch,
               children: [
                 Expanded(
-                  flex: 4,
-                  child: Row(
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    crossAxisAlignment: CrossAxisAlignment.stretch,
                     children: [
                       Expanded(
-                        child: Column(
-                          children: [
-                            Row(
-                              mainAxisAlignment: MainAxisAlignment.center,
-                              children: [
-                                Text(
-                                  "Details ",
-                                  style: TextStyle(
-                                    color: kMainColor,
-                                    fontFamily: kMainFont,
-                                    fontSize: 25,
-                                  ),
-                                ),
-                                Icon(
-                                  Icons.info,
-                                  color: kMainColor,
-                                  size: 30,
-                                ),
-                                Text(
-                                  " : ",
-                                  style: TextStyle(
-                                    color: kMainColor,
-                                    fontFamily: kMainFont,
-                                    fontSize: 25,
-                                  ),
-                                ),
-                              ],
-                            ),
-                            Align(
-                              alignment: Alignment.center,
-                              child: Column(
-                                children: [
-                                  Text(
-                                    "* A",
-                                    style: TextStyle(
-                                      color: kMainColor,
-                                      fontFamily: kMainFont,
+                          flex: 9,
+                          child: Row(
+                            children: [
+                              Expanded(
+                                child: Column(
+                                  children: [
+                                    Expanded(
+                                      flex: 2,
+                                      child: Row(
+                                        mainAxisAlignment:
+                                            MainAxisAlignment.center,
+                                        children: [
+                                          Text(
+                                            "Details ",
+                                            style: TextStyle(
+                                                color: kMainColor,
+                                                fontFamily: kMainFont,
+                                                fontSize: 20),
+                                          ),
+                                          Icon(
+                                            Icons.info,
+                                            color: kMainColor,
+                                            size: 30,
+                                          ),
+                                          Text(
+                                            " : ",
+                                            style: TextStyle(
+                                                color: kMainColor,
+                                                fontFamily: kMainFont,
+                                                fontSize: 25),
+                                          )
+                                        ],
+                                      ),
                                     ),
-                                  ),
-                                  Text(
-                                    "* A",
-                                    style: TextStyle(
-                                      color: kMainColor,
-                                      fontFamily: kMainFont,
-                                    ),
-                                  ),
-                                  Text(
-                                    "* A",
-                                    style: TextStyle(
-                                      color: kMainColor,
-                                      fontFamily: kMainFont,
-                                    ),
-                                  ),
-                                ],
+                                    Expanded(
+                                      flex: 3,
+                                      child: Column(
+                                        children: [
+                                          Text(
+                                            "A",
+                                            style: TextStyle(
+                                                color: kMainColor,
+                                                fontFamily: kMainFont,
+                                                fontSize: 13),
+                                          ),
+                                          Text(
+                                            "B",
+                                            style: TextStyle(
+                                                color: kMainColor,
+                                                fontFamily: kMainFont,
+                                                fontSize: 13),
+                                          ),
+                                          Text(
+                                            "C",
+                                            style: TextStyle(
+                                                color: kMainColor,
+                                                fontFamily: kMainFont,
+                                                fontSize: 13),
+                                          ),
+                                        ],
+                                      ),
+                                    )
+                                  ],
+                                ),
                               ),
-                            )
-                          ],
-                        ),
-                      ),
+                              Expanded(
+                                child: Column(
+                                  children: [
+                                    Expanded(
+                                      flex: 2,
+                                      child: Row(
+                                        mainAxisAlignment:
+                                            MainAxisAlignment.center,
+                                        children: [
+                                          Text(
+                                            "Calories ",
+                                            style: TextStyle(
+                                                color: kMainColor,
+                                                fontFamily: kMainFont,
+                                                fontSize: 20),
+                                          ),
+                                          Icon(
+                                            Icons.local_fire_department,
+                                            color: kMainColor,
+                                            size: 30,
+                                          ),
+                                          Text(
+                                            " : ",
+                                            style: TextStyle(
+                                                color: kMainColor,
+                                                fontFamily: kMainFont,
+                                                fontSize: 20),
+                                          )
+                                        ],
+                                      ),
+                                    ),
+                                    Expanded(
+                                      flex: 3,
+                                      child: Padding(
+                                        padding:
+                                            const EdgeInsets.only(bottom: 18.0),
+                                        child: Column(
+                                          mainAxisAlignment:
+                                              MainAxisAlignment.center,
+                                          crossAxisAlignment:
+                                              CrossAxisAlignment.center,
+                                          children: [
+                                            Text(
+                                              "340",
+                                              style: TextStyle(
+                                                color: kMainColor,
+                                                fontFamily: kMainFont,
+                                                fontSize: 30,
+                                              ),
+                                            ),
+                                          ],
+                                        ),
+                                      ),
+                                    )
+                                  ],
+                                ),
+                              ),
+                            ],
+                          )),
                       Expanded(
-                        child: Column(
-                          children: [
-                            Row(
-                              mainAxisAlignment: MainAxisAlignment.center,
-                              children: [
-                                Text(
-                                  "Calories ",
-                                  style: TextStyle(
+                        flex: 5,
+                        child: Center(
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              Text(
+                                "Price : ",
+                                style: TextStyle(
                                     color: kMainColor,
                                     fontFamily: kMainFont,
-                                    fontSize: 25,
-                                  ),
-                                ),
-                                Icon(
-                                  Icons.local_fire_department,
-                                  color: kMainColor,
-                                  size: 30,
-                                ),
-                                Text(
-                                  " : ",
-                                  style: TextStyle(
-                                    color: kMainColor,
-                                    fontFamily: kMainFont,
-                                    fontSize: 25,
-                                  ),
-                                ),
-                              ],
-                            ),
-                            Text(
-                              "340 cal",
-                              style: TextStyle(
-                                color: kMainColor,
-                                fontFamily: kMainFont,
+                                    fontSize: 25),
                               ),
-                            ),
-                          ],
+                              Text(
+                                store.activeProduct.price.toString(),
+                                style: TextStyle(
+                                    color: kMainColor,
+                                    fontFamily: kMainFont,
+                                    fontSize: 25),
+                              ),
+                            ],
+                          ),
                         ),
                       ),
                     ],
                   ),
-                ),
-                Expanded(
-                  child: Row(),
-                  flex: 2,
-                ),
+                )
               ],
             ),
           ),
@@ -198,9 +245,12 @@ class _ProductDetailsPageState extends State<ProductDetailsPage> {
                 Padding(
                   padding: const EdgeInsets.all(18.0),
                   child: Container(
-                    child: Text(
-                      "${store.activeProduct.qty}",
-                      style: TextStyle(fontSize: 25),
+                    child: Padding(
+                      padding: const EdgeInsets.only(bottom: 1.0),
+                      child: Text(
+                        "${store.activeProduct.qty}",
+                        style: TextStyle(fontSize: 25 , color: kMainColor),
+                      ),
                     ),
                   ),
                 ),
@@ -235,7 +285,10 @@ class _ProductDetailsPageState extends State<ProductDetailsPage> {
                   child: Center(
                     child: Text(
                       "Add To Cart",
-                      style: TextStyle(color: Colors.white),
+                      style: TextStyle(
+                          color: Colors.white,
+                          fontSize: 30,
+                          fontFamily: "Pacifico"),
                     ),
                   ),
                   decoration: BoxDecoration(
