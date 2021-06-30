@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/material.dart';
-import 'package:lab7/Pages/BasketPage.dart';
-import 'package:lab7/Pages/PrdoucDetailsPage.dart';
+import 'package:lab7/Pages/ProducDetailsPage.dart';
 import 'package:lab7/Store/MyStoreClass.dart';
 import 'package:provider/provider.dart';
 

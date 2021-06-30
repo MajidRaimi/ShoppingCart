@@ -24,26 +24,32 @@ class ShowInCart extends StatelessWidget {
           children: [
             Expanded(
               child: Center(
-                child: Padding(
-                  padding: const EdgeInsets.all(8.0),
-                  child: CircleAvatar(
-                    backgroundColor: Colors.white,
-                    backgroundImage: AssetImage(product.photo),
-                    radius: double.infinity,
-                  ),
-                )
-              ),
+                  child: Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: CircleAvatar(
+                  backgroundColor: Colors.white,
+                  backgroundImage: AssetImage(product.photo),
+                  radius: double.infinity,
+                ),
+              )),
               flex: 3,
             ),
             Expanded(
-              child: Center(child: Text(product.name , style : TextStyle(color: kMainColor , fontFamily: kMainFont , fontSize: 20),)),
+              child: Center(
+                child: Text(
+                  product.name,
+                  style: TextStyle(
+                      color: kMainColor, fontFamily: kMainFont, fontSize: 20),
+                ),
+              ),
               flex: 7,
             ),
             Expanded(
               child: Center(
                 child: Text(
                   product.qty.toString(),
-                  style : TextStyle(color: kMainColor , fontFamily: kMainFont , fontSize: 20),
+                  style: TextStyle(
+                      color: kMainColor, fontFamily: kMainFont, fontSize: 20),
                 ),
               ),
               flex: 3,
