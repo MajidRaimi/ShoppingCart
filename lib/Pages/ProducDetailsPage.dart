@@ -28,10 +28,13 @@ class _ProductDetailsPageState extends State<ProductDetailsPage> {
                   borderRadius: BorderRadius.only(
                       bottomLeft: Radius.circular(30),
                       bottomRight: Radius.circular(30)),
-                  child: Image(
-                    width: double.infinity,
-                    image: AssetImage(store.activeProduct.photo),
-                    fit: BoxFit.fill,
+                  child: Hero(
+                    tag: "tagImage${store.activeProduct.id}",
+                    child: Image(
+                      width: double.infinity,
+                      image: AssetImage(store.activeProduct.photo),
+                      fit: BoxFit.fill,
+                    ),
                   ),
                 ),
                 Padding(

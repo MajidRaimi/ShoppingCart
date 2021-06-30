@@ -22,9 +22,12 @@ class _BasketPageState extends State<BasketPage> {
           elevation: 0,
           centerTitle: true,
           leading: IconButton(
-            icon: Icon(Icons.arrow_back_ios , color: kMainColor,),
+            icon: Icon(
+              Icons.arrow_back_ios,
+              color: kMainColor,
+            ),
             onPressed: () {
-              Navigator.pop(context) ;
+              Navigator.pop(context);
             },
           ),
           actions: [
@@ -33,12 +36,15 @@ class _BasketPageState extends State<BasketPage> {
                 padding: const EdgeInsets.only(right: 18.0),
                 child: Text(
                   store.getBasketTotalQty().toString(),
-                  style: TextStyle(fontSize: 20 , color: kMainColor),
+                  style: TextStyle(fontSize: 20, color: kMainColor),
                 ),
               ),
             ),
           ],
-          title: Text("Basket" , style: TextStyle(color: kMainColor),),
+          title: Text(
+            "Basket",
+            style: TextStyle(color: kMainColor),
+          ),
         ),
         body: Column(
           children: [
@@ -53,9 +59,9 @@ class _BasketPageState extends State<BasketPage> {
             ),
             Expanded(
                 child: Text(
-                    "Total Of ${store.getBasketTotalQty()} Orders For ${store.getTotalPrice().toString()} SAR" , style: TextStyle(
-                  color: kMainColor , fontSize: 15
-                ),))
+              "Total Of ${store.getBasketTotalQty()} Orders For ${store.getTotalPrice().toString()} SAR",
+              style: TextStyle(color: kMainColor, fontSize: 15),
+            ))
           ],
         ));
   }

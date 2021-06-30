@@ -37,14 +37,11 @@ class FoodScreen extends StatelessWidget {
                       child: Container(
                         child: ClipRRect(
                           borderRadius: BorderRadius.circular(40),
-                          child: Hero(
-                            tag: "tagImage${store.products[i].id}",
-                            child: Image(
-                              width: double.infinity,
-                              height: double.infinity,
-                              fit: BoxFit.fill,
-                              image: AssetImage(store.products[i].photo),
-                            ),
+                          child: Image(
+                            width: double.infinity,
+                            height: double.infinity,
+                            fit: BoxFit.fill,
+                            image: AssetImage(store.products[i].photo),
                           ),
                         ),
                       ),
